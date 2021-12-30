@@ -1,5 +1,5 @@
 import { createUser, updateUsername } from "../functions-without-context";
-import { prismaMock } from "../../singleton";
+import { prismaMock } from "../singleton";
 
 test("should create new user", async () => {
   const user = {
@@ -15,6 +15,7 @@ test("should create new user", async () => {
     id: 1,
     name: "Rich",
     email: "hello@prisma.io",
+    acceptTermsAndConditions: true,
   });
 });
 
@@ -23,6 +24,7 @@ test("should update a user name", async () => {
     id: 1,
     name: "Rich Haines",
     email: "hello@prisma.io",
+    acceptTermsAndConditions: true,
   };
 
   prismaMock.user.update.mockResolvedValue(user);
@@ -31,6 +33,7 @@ test("should update a user name", async () => {
     id: 1,
     name: "Rich Haines",
     email: "hello@prisma.io",
+    acceptTermsAndConditions: true,
   });
 });
 
